@@ -4,12 +4,20 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Welcome to my blog!">
 	<main>
+		<h1>Hello Blog!</h1>
 		<p>Example body copy text. This needs to look really good.</p>
+
 	</main>
 </Layout>
 
 <style>
 	body {
 		background-color: var(--color-bg);
+	}
+	main {
+		max-width: 60ch;
+		display: grid;
+		justify-items: center;
+		margin: 0 auto;
 	}
 </style>

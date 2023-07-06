@@ -22,17 +22,29 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	@font-face {
-		font-family: "CrimsonPro";
-		src: url("/fonts/CrimsonPro-Regular.woff2");
+		font-family: "MonaSans";
+		src: url("/fonts/MonaSans.woff2");
 	}
 
 	p {
-		font-family: "CrimsonPro", serif;
+		font-family: "MonaSans";
+		font-weight: var(--font-weight-regular);
+		font-size: 18px;
+		line-height: var(--line-height);
+	}
+
+	h1 {
+		font-family: "MonaSans";
+		font-weight: var(--font-weight-bold);
 	}
 
 	:root {
 		--color-bg: hsl(131, 28%, 89%);
 		--color-text: hsl(198, 32%, 8%);
+		--font-weight-regular: 400;
+		--font-weight-bold: 700;
+		--font-weight-light: 300;
+		--line-height: 1.5;
 	}
 
 	[data-theme="dark"] {
