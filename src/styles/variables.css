@@ -1,0 +1,28 @@
+:root {
+    --color-primary: hsl(235, 64%, 50%);
+
+    --color-secondary: hsl(137, 59%, 54%);
+
+    --color-bg: hsl(113, 0%, 98%);
+    --color-text: hsl(198, 32%, 8%);
+
+    --font-family: "MonaSans";
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+    --line-height: 1.5;
+}
+
+[data-theme="dark"] {
+    --color-bg: hsl(113, 0%, 10%);
+    --color-text: hsl(315, 10%, 98%);
+    --color-primary: hsl(235, 75%, 65%);
+    --color-secondary: hsl(137, 69%, 50%);
+}
+
+[data-theme="light"] {
+    --color-bg: hsl(113, 0%, 98%);
+    --color-text: hsl(198, 32%, 8%);
+    --color-primary: hsl(235, 64%, 50%);
+    --color-secondary: hsl(137, 69%, 44%);
+}

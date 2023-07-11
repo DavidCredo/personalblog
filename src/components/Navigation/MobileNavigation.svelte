@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { cubicInOut, elasticIn, expoIn } from "svelte/easing";
   import { fade, slide } from "svelte/transition";
 
   let isOpen = false;
