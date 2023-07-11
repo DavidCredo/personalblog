@@ -1,10 +1,10 @@
 ---
-import DesktopNavigation from "../components/DesktopNavigation.svelte";
-import MobileNavigation from "../components/MobileNavigation.svelte";
+import DesktopNavigation from "../components/Navigation/DesktopNavigation.svelte";
+import MobileNavigation from "../components/Navigation/MobileNavigation.svelte";
+import ThemeToggle from "../components/ThemeToggle.svelte";
 export interface Props {
 	title: string;
 }
-
 const { title } = Astro.props;
 ---
 
@@ -19,8 +19,13 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<DesktopNavigation />
-		<MobileNavigation />
+		<header>
+			<DesktopNavigation />
+			<div class="toggle-wrapper">
+				<ThemeToggle client:only="svelte" />
+			</div>
+			<MobileNavigation client:load />
+		</header>
 		<slot />
 	</body>
 </html>
@@ -30,10 +35,15 @@ const { title } = Astro.props;
 		src: url("/fonts/MonaSans.woff2");
 	}
 
+	header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 	p {
 		font-weight: var(--font-weight-regular);
-		font-size: 18px;
 		line-height: var(--line-height);
+		color: var(--color-text);
 	}
 
 	h1 {
@@ -44,17 +54,9 @@ const { title } = Astro.props;
 	Basic color palette stuff 
  */
 	:root {
-		--color-primary-700: hsl(235, 58%, 76%);
-		--color-primary-600: hsl(235, 58%, 66%);
-		--color-primary-500: hsl(235, 58%, 56%);
-		--color-primary-400: hsl(235, 58%, 46%);
-		--color-primary-300: hsl(235, 58%, 36%);
+		--color-primary: hsl(235, 64%, 50%);
 
-		--color-secondary-300: hsl(137, 59%, 34%);
-		--color-secondary-400: hsl(137, 59%, 44%);
-		--color-secondary-500: hsl(137, 59%, 54%);
-		--color-secondary-600: hsl(137, 59%, 64%);
-		--color-secondary-700: hsl(137, 59%, 74%);
+		--color-secondary: hsl(137, 59%, 54%);
 
 		--color-bg: hsl(113, 0%, 98%);
 		--color-text: hsl(198, 32%, 8%);
@@ -66,14 +68,23 @@ const { title } = Astro.props;
 		--line-height: 1.5;
 	}
 
+	html {
+		font-size: 1rem;
+		font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
+	}
+
 	[data-theme="dark"] {
 		--color-bg: hsl(113, 0%, 10%);
 		--color-text: hsl(315, 10%, 98%);
+		--color-primary: hsl(235, 75%, 65%);
+		--color-secondary: hsl(137, 69%, 50%);
 	}
 
 	[data-theme="light"] {
 		--color-bg: hsl(113, 0%, 98%);
 		--color-text: hsl(198, 32%, 8%);
+		--color-primary: hsl(235, 64%, 50%);
+		--color-secondary: hsl(137, 69%, 44%);
 	}
 	/*
   1. Use a more-intuitive box-sizing model.
@@ -99,6 +110,7 @@ const { title } = Astro.props;
 		line-height: var(--line-height);
 		background-color: var(--color-bg);
 		-webkit-font-smoothing: antialiased;
+		transition: background-color 0.5s ease;
 	}
 	/*
   5. Improve media defaults
