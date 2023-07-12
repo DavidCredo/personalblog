@@ -1,0 +1,88 @@
+---
+import "../styles/variables.css";
+import "../styles/global.css";
+import type { MarkdownHeading } from "astro";
+import TableOfContents from "../components/TableOfContents/TableOfContents.svelte";
+export interface Props {
+    title: string;
+    headings: MarkdownHeading[];
+}
+
+const { title, headings } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body>
+        <script is:inline>
+            const persistedColorPreference =
+                window.localStorage.getItem("color-mode");
+            const hasPersistedPreference =
+                typeof persistedColorPreference === "string";
+
+            if (hasPersistedPreference) {
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    persistedColorPreference
+                );
+            } else {
+                const mediaQuery = window.matchMedia(
+                    "prefers-color-scheme: dark"
+                );
+                const hasMediaQueryPreference =
+                    typeof mediaQuery.matches === "boolean";
+
+                if (hasMediaQueryPreference) {
+                    const theme = mediaQuery.matches ? "dark" : "light";
+                    document.documentElement.setAttribute("data-theme", theme);
+                } else {
+                    document.documentElement.setAttribute(
+                        "data-theme",
+                        "light"
+                    );
+                }
+            }
+        </script>
+        <div class="grid-container">
+            <TableOfContents headings={headings} />
+            <main>
+                <slot />
+            </main>
+        </div>
+    </body>
+</html>
+
+<style is:global>
+    .grid-container {
+        display: grid;
+        grid-template: "post toc" auto;
+        gap: 3rem;
+        max-width: 1100px;
+        place-content: center;
+        margin-inline: auto;
+    }
+
+    nav {
+        grid-area: toc;
+        position: sticky;
+        top: 1rem;
+        height: fit-content;
+    }
+
+    .content {
+        grid-area: post;
+    }
+
+    h1 {
+        color: var(--color-primary);
+    }
+
+    p {
+        margin-bottom: 0.8rem;
+    }
+</style>

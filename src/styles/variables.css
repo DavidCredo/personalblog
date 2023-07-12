@@ -1,11 +1,11 @@
 :root {
   --color-primary: hsl(235, 64%, 50%);
-
   --color-secondary: hsl(137, 59%, 54%);
 
   --color-bg: hsl(113, 0%, 98%);
   --color-bg-elevated: hsl(113, 0%, 92%);
   --color-text: hsl(198, 32%, 8%);
+  --color-text-light: hsl(198, 0%, 30%);
 
   --shadow-color: 0deg 0% 58%;
   --shadow-elevation-medium: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
@@ -21,16 +21,21 @@
 }
 
 [data-theme="dark"] {
+  --color-primary: hsl(235, 75%, 65%);
+  --color-secondary: hsl(137, 69%, 50%);
+
   --color-bg: hsl(113, 0%, 10%);
   --color-bg-elevated: hsl(113, 0%, 20%);
   --color-text: hsl(315, 10%, 98%);
-  --color-primary: hsl(235, 75%, 65%);
-  --color-secondary: hsl(137, 69%, 50%);
+  --color-text-light: hsl(315, 10%, 85%);
 }
 
 [data-theme="light"] {
-  --color-bg: hsl(113, 0%, 98%);
-  --color-text: hsl(198, 32%, 8%);
   --color-primary: hsl(235, 64%, 50%);
   --color-secondary: hsl(137, 69%, 44%);
+
+  --color-bg: hsl(113, 0%, 98%);
+  --color-bg-elevated: hsl(113, 0%, 92%);
+  --color-text: hsl(198, 32%, 8%);
+  --color-text-light: hsl(198, 0%, 30%);
 }
