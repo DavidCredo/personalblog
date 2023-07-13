@@ -14,6 +14,12 @@
     5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
 
   --font-family: "MonaSans";
+  --font-size-small: 1rem;
+  --font-size-medium: 1.2rem;
+  --font-size-large: 1.4rem;
+  --font-size-xlarge: 1.6rem;
+  --font-size-xxlarge: 2rem;
+
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-bold: 700;
@@ -38,4 +44,10 @@
   --color-bg-elevated: hsl(113, 0%, 92%);
   --color-text: hsl(198, 32%, 8%);
   --color-text-light: hsl(198, 0%, 30%);
+}
+
+@media screen  and (max-width: 500px) {
+  :root {
+    --line-height: 1.4;
+  }
 }
