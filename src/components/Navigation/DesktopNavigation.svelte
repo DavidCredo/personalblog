@@ -11,7 +11,8 @@
 
 <style>
   nav {
-    padding: 32px;
+    padding: 24px;
+    margin: 0;
   }
   ul {
     list-style-type: none;
@@ -24,6 +25,7 @@
     text-decoration: none;
     position: relative;
     padding: 12px;
+    font-size: var(--font-size-medium);
     color: var(--color-text);
   }
 

@@ -1,3 +1,7 @@
+/*
+Heavily inspired by Josh W. Comeau's CSS-Reset! 
+*/
+
 @font-face {
   font-family: "MonaSans";
   src: url("/fonts/MonaSans.woff2");
@@ -18,7 +22,7 @@ Basic color palette stuff
 */
 html {
   font-size: 1rem;
-  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
+  font-size: clamp(1rem, calc(1rem + 0.6vw), 1.375rem);
 }
 
 /*
@@ -78,5 +82,6 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+  line-height: 1.1;
   color: var(--color-text);
 }

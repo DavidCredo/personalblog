@@ -51,19 +51,23 @@ const { title } = Astro.props;
 			}
 		</script>
 		<header>
-			<DesktopNavigation />
-			<div class="toggle-wrapper">
-				<ThemeToggle client:only="svelte" />
+			<div class="flex-wrapper">
+				<DesktopNavigation />
+				<div class="toggle-wrapper">
+					<ThemeToggle client:only="svelte" />
+				</div>
+				<MobileNavigation client:media="(min-width: 600px)" />
 			</div>
-			<MobileNavigation client:media="(min-width: 600px)" />
 		</header>
 		<slot />
 	</body>
 </html>
 <style>
-	header {
+	.flex-wrapper {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		max-width: 1000px;
+		margin: 0 auto;
 	}
 </style>
