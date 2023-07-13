@@ -5,7 +5,7 @@
   export let headings: MarkdownHeading[];
 </script>
 
-<nav>
+<nav class="toc">
   <div class="flex-wrapper">
     <h2>Table of Contents</h2>
     {#each headings as heading}
@@ -15,9 +15,16 @@
 </nav>
 
 <style>
+  h2 {
+    font-size: var(--font-size-large);
+  }
   .flex-wrapper {
     display: flex;
     flex-direction: column;
     align-items: start;
+  }
+
+  nav {
+    padding: 1rem;
   }
 </style>
