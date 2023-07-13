@@ -22,7 +22,7 @@ Basic color palette stuff
 */
 html {
   font-size: 1rem;
-  font-size: clamp(1rem, calc(1rem + 0.6vw), 1.375rem);
+  font-size: clamp(1rem, calc(1rem + 0.2vw), 1.14rem);
 }
 
 /*
@@ -82,6 +82,9 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
-  line-height: 1.1;
   color: var(--color-text);
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.1;
 }
