@@ -20,9 +20,9 @@ h1 {
 /* 	
 Basic color palette stuff 
 */
-html {
+html {  
   font-size: 1rem;
-  font-size: clamp(1rem, calc(1rem + 0.2vw), 1.14rem);
+  font-size: clamp(1rem, calc(1rem + 0.2vw), 1.2rem);
 }
 
 /*
@@ -87,4 +87,24 @@ h6 {
 
 h1, h2, h3, h4 {
   line-height: 1.1;
+}
+
+h1 {
+  font-size: var(--font-size-xxxlarge);
+}
+
+h2 {
+  font-size: var(--font-size-xxlarge);
+}
+
+h3 {
+  font-size: var(--font-size-xlarge);
+}
+
+h4 {
+  font-size: var(--font-size-large);
+}
+
+p {
+  font-size: var(--font-size-regular);
 }

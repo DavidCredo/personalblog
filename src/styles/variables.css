@@ -14,16 +14,18 @@
     5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
 
   --font-family: "MonaSans";
-  --font-size-small: 1rem;
+
+  --font-size-regular: 1rem;
   --font-size-medium: 1.2rem;
-  --font-size-large: 1.4rem;
-  --font-size-xlarge: 1.6rem;
-  --font-size-xxlarge: 2rem;
+  --font-size-large: 1.44rem;
+  --font-size-xlarge: 1.728rem;
+  --font-size-xxlarge: 2.074rem;
+  --font-size-xxxlarge: 2.488rem;
 
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-bold: 700;
-  --line-height: 1.5;
+  --line-height: 1.55;
 }
 
 [data-theme="dark"] {
@@ -33,7 +35,7 @@
   --color-bg: hsl(0, 0%, 10%);
   --color-bg-elevated: hsl(113, 0%, 20%);
   --color-text: hsl(315, 0%, 90%);
-  --color-text-inverted: hsl(315,0%, 10%);
+  --color-text-inverted: hsl(315, 0%, 10%);
   --color-text-light: hsl(315, 10%, 85%);
 }
 
@@ -44,12 +46,12 @@
   --color-bg: hsl(113, 0%, 96%);
   --color-bg-elevated: hsl(113, 0%, 92%);
   --color-text: hsl(198, 20%, 25%);
-  --color-text-inverted: hsl(315,0%, 96%);
+  --color-text-inverted: hsl(315, 0%, 96%);
   --color-text-light: hsl(198, 20%, 30%);
 }
 
 @media screen and (max-width: 500px) {
   :root {
-    --line-height: 1.4;
+    --line-height: 1.45;
   }
 }
