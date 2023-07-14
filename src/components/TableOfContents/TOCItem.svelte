@@ -8,10 +8,9 @@
 
 <style>
   a {
-    padding-left: 1rem;
     text-decoration: none;
     color: var(--color-text-light);
-    font-size: var(--font-size-medium);
+    font-size: var(--font-size-regular);
     transition: color 0.2s ease, font-weight 0.2s ease;
   }
 

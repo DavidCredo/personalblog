@@ -6,7 +6,7 @@
 
 <article>
   <a class="card-link" href={"/blog/" + slug}>
-    <h2>{title}</h2>
+    <h3>{title}</h3>
     <p>{description}</p>
     <div class="link-cta">Read more</div>
   </a>
@@ -14,32 +14,21 @@
 
 <style>
   article {
-    max-width: 25rem;
-    border-radius: 8px;
+    max-width: 700px;
     transition: background-color 0.4s ease;
-  }
-
-  h2 {
-    color: var(--color-text);
-    transition: color 0.2s ease;
   }
 
   p {
     color: var(--color-text-light);
-    padding-block: 1rem;
   }
 
   a {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     height: 100%;
-    justify-content: space-between;
     text-decoration: none;
-    padding: 1.4rem;
-  }
-
-  article:hover {
-    background-color: var(--color-bg-elevated);
+    padding: 1rem;
   }
 
   .link-cta {
@@ -47,5 +36,9 @@
     width: fit-content;
     color: var(--color-primary);
     font-weight: var(--font-weight-bold);
+  }
+
+  a:hover > h3 {
+    color: var(--color-primary)
   }
 </style>
