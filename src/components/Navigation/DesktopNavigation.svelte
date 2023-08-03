@@ -1,4 +1,5 @@
 <script>
+  import ThemeToggle from "../Toggles/ThemeToggle.svelte";
 </script>
 
 <nav aria-label="desktop navigation">
@@ -7,25 +8,29 @@
     <li><a href="/about">About</a></li>
     <li><a href="/posts">Posts</a></li>
   </ul>
+
+    <ThemeToggle />
 </nav>
 
 <style>
   nav {
-    padding: 24px;
+    padding: 1rem;
     margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
   ul {
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
     padding: 0;
   }
   a {
     text-decoration: none;
-    position: relative;
     padding: 12px;
-    font-size: var(--font-size-medium);
+    font-size: var(--font-size-regular);
+    font-weight: var(--font-weight-bold);
     color: var(--color-text);
   }
 

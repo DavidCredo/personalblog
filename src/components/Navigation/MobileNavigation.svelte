@@ -1,5 +1,7 @@
 <script lang="ts">
   import { fade, slide } from "svelte/transition";
+  import MenuToggle from "../Toggles/MenuToggle.svelte";
+  import ThemeToggle from "../Toggles/ThemeToggle.svelte";
 
   let isOpen = false;
 
@@ -8,13 +10,15 @@
   }
 </script>
 
-<button
-  on:click={() => {
-    toggleMenu();
-  }}
->
-  {isOpen == true ? "close" : "open"}
-</button>
+<div class="menu-toggle-wrapper">
+  <button
+    on:click={() => {
+      toggleMenu();
+    }}
+  >
+    <MenuToggle {isOpen} />
+  </button>
+</div>
 {#if isOpen}
   <nav aria-label="mobile-navigation" transition:fade={{ duration: 200 }}>
     <ul>
@@ -37,6 +41,8 @@
         <a href="/posts">Posts</a>
       </li>
     </ul>
+
+    <ThemeToggle />
   </nav>
 {/if}
 
@@ -70,7 +76,7 @@
 
   li {
     font-weight: var(--font-weight-bold);
-    font-size: xx-large;
+    font-size: var(--font-size-xxxlarge);
   }
   a {
     padding: 1rem;
@@ -82,5 +88,10 @@
     border: none;
     cursor: pointer;
     z-index: 101;
+  }
+
+  .menu-toggle-wrapper {
+    position: relative;
+    left: 88%;
   }
 </style>
