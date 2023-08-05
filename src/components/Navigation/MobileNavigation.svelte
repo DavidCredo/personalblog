@@ -2,6 +2,7 @@
   import { fade, slide } from "svelte/transition";
   import MenuToggle from "../Toggles/MenuToggle.svelte";
   import ThemeToggle from "../Toggles/ThemeToggle.svelte";
+  import Spacer from "../Util/Spacer.svelte";
 
   let isOpen = false;
 
@@ -22,26 +23,17 @@
 {#if isOpen}
   <nav aria-label="mobile-navigation" transition:fade={{ duration: 200 }}>
     <ul>
-      <li
-        in:slide={{ axis: "x", delay: 200 }}
-        out:slide={{ axis: "x", duration: 200 }}
-      >
+      <li>
         <a href="/">Home</a>
       </li>
-      <li
-        in:slide={{ axis: "x", delay: 300 }}
-        out:slide={{ axis: "x", duration: 400 }}
-      >
+      <li>
         <a href="/about">About</a>
       </li>
-      <li
-        in:slide={{ axis: "x", delay: 400 }}
-        out:slide={{ axis: "x", duration: 600 }}
-      >
+      <li>
         <a href="/posts">Posts</a>
       </li>
     </ul>
-
+    <Spacer size={32} />
     <ThemeToggle />
   </nav>
 {/if}
@@ -57,7 +49,6 @@
     top: 0;
     bottom: 0;
     overflow: hidden;
-    transition: left 0.3s ease;
     width: 100%;
     z-index: 100;
   }
@@ -65,18 +56,19 @@
     nav {
       display: none;
     }
-    button {
+    .menu-toggle-wrapper {
       display: none;
     }
   }
   ul {
     padding: 0;
     list-style-type: none;
+    text-align: center;
   }
 
   li {
     font-weight: var(--font-weight-bold);
-    font-size: var(--font-size-xxxlarge);
+    font-size: var(--font-size-xlarge);
   }
   a {
     padding: 1rem;
@@ -88,10 +80,5 @@
     border: none;
     cursor: pointer;
     z-index: 101;
-  }
-
-  .menu-toggle-wrapper {
-    position: relative;
-    left: 88%;
   }
 </style>

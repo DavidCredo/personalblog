@@ -1,5 +1,6 @@
 <script>
   import ThemeToggle from "../Toggles/ThemeToggle.svelte";
+  import Spacer from "../Util/Spacer.svelte";
 </script>
 
 <nav aria-label="desktop navigation">
@@ -8,14 +9,13 @@
     <li><a href="/about">About</a></li>
     <li><a href="/posts">Posts</a></li>
   </ul>
-
-    <ThemeToggle />
+  <Spacer axis="horizontal" size="16" />
+  <ThemeToggle />
 </nav>
 
 <style>
   nav {
     padding: 1rem;
-    margin: 0;
     display: flex;
     flex-direction: row;
     align-items: center;

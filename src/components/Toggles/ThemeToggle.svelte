@@ -41,53 +41,50 @@
   button {
     cursor: pointer;
     background: none;
+    padding: 2px 6px 3px;
     border: none;
     border-radius: 40px;
-    width: 80px;
+    width: 70px;
     height: 40px;
-    margin: auto;
     position: relative;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
     background-color: var(--color-neutral-200);
-
-    @media (hover: none) {
-      --size: 48px;
-    }
   }
 
   button::before {
     content: "";
     display: block;
-    height: 66%;
+    position: relative;
+    height: 25px;
     aspect-ratio: 1;
     border-radius: 50%;
     background-color: var(--color-text);
     z-index: 2;
-    transform: translate(0);
     transition: transform 0.4s ease;
+    padding: 0;
   }
 
   button.enabled::before {
-    transform: translateX(40px);
+    transform: translateX(30px);
   }
 
   .icon-wrapper {
     position: absolute;
-    width: 70px;
+    width: 60px;
     display: flex;
     top: 0;
     left: 0;
+    bottom: 0;
+    right: 0;
     justify-content: space-between;
     align-items: center;
-    margin: 0 5px;
-    height: 100%;
+    margin: 0 4px;
   }
 
   :global(.icon-wrapper > svg) {
-    width: 20px;
+    width: 50px;
     z-index: 0;
-    padding: 0 1px;
-    margin: 0 4px;
+    padding: 0 4px;
   }
 </style>
