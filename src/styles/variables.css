@@ -1,76 +1,87 @@
 :root {
-  --color-primary: hsl(20, 85%, 54%);
-  --color-secondary: hsl(200, 85%, 44%);
+  --color-primary: hsl(210, 100%, 45%);
+  --color-secondary: hsl(210, 100%, 80%);
 
-  --color-bg: hsl(113, 0%, 98%);
-  --color-text: hsl(198, 0%, 25%);
+  --color-bg: hsl(0, 0%, 96%);
+  --color-text: hsl(180, 0%, 20%);
 
-  --color-neutral-100: hsl(0, 0%, 92%);
-  --color-neutral-200: hsl(0, 0%, 85%);
-  --color-neutral-300: hsl(0, 0%, 70%);
-  --color-neutral-400: hsl(0, 0%, 60%);
-  --color-neutral-500: hsl(0, 0%, 50%);
-  --color-neutral-600: hsl(0, 0%, 40%);
-  --color-neutral-700: hsl(0, 0%, 30%);
-  --color-neutral-800: hsl(0, 0%, 20%);
-  --color-neutral-900: hsl(0, 0%, 5%);
-  --color-neutral-1000: hsl(0, 0%, 0%);
+  --color-neutral-100: hsl(180, 20%, 92%);
+  --color-neutral-200: hsl(180, 20%, 85%);
+  --color-neutral-300: hsl(180, 20%, 70%);
+  --color-neutral-400: hsl(180, 20%, 60%);
+  --color-neutral-500: hsl(180, 20%, 50%);
+  --color-neutral-600: hsl(180, 20%, 40%);
+  --color-neutral-700: hsl(180, 20%, 30%);
+  --color-neutral-800: hsl(180, 20%, 20%);
+  --color-neutral-900: hsl(180, 20%, 15%);
+  --color-neutral-1000: hsl(180, 20%, 5%);
 
-  --font-family: "MonaSans";
+  --font-family: system-ui, sans-serif;
 
+  --font-size-small: 0.8rem;
   --font-size-regular: 1rem;
-  --font-size-medium: 1.2rem;
-  --font-size-large: 1.44rem;
-  --font-size-xlarge: 1.728rem;
-  --font-size-xxlarge: 2.074rem;
-  --font-size-xxxlarge: 2.488rem;
+  --font-size-medium: 1.25rem;
+  --font-size-large: 1.563rem;
+  --font-size-xlarge: 1.953rem;
 
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-bold: 700;
-  --line-height: 1.65;
+  --line-height: 1.6;
 }
 
 [data-theme="dark"] {
-  --color-primary: hsl(20, 90%, 59%);
-  --color-secondary: hsl(200, 90%, 50%);
+  --color-primary: hsl(210, 90%, 65%);
+  --color-secondary: hsl(210, 90%, 40%);
 
-  --color-bg: hsl(0, 0%, 10%);
-  --color-text: hsl(315, 0%, 90%);
+  --color-bg: hsl(230, 25%, 10%);
+  --color-text: hsl(315, 0%, 93%);
 
-  --color-neutral-1000: hsl(0, 0%, 92%);
-  --color-neutral-900: hsl(0, 0%, 85%);
-  --color-neutral-800: hsl(0, 0%, 70%);
-  --color-neutral-700: hsl(0, 0%, 60%);
-  --color-neutral-600: hsl(0, 0%, 50%);
-  --color-neutral-500: hsl(0, 0%, 40%);
-  --color-neutral-400: hsl(0, 0%, 30%);
-  --color-neutral-300: hsl(0, 0%, 20%);
-  --color-neutral-200: hsl(0, 0%, 5%);
-  --color-neutral-100: hsl(0, 0%, 0%);
+  --color-neutral-1000: hsl(220, 20%, 100%);
+  --color-neutral-900: hsl(220, 20%, 95%);
+  --color-neutral-800: hsl(220, 20%, 90%);
+  --color-neutral-700: hsl(220, 20%, 80%);
+  --color-neutral-600: hsl(220, 20%, 70%);
+  --color-neutral-500: hsl(220, 20%, 60%);
+  --color-neutral-400: hsl(220, 20%, 50%);
+  --color-neutral-300: hsl(220, 20%, 30%);
+  --color-neutral-200: hsl(220, 20%, 20%);
+  --color-neutral-100: hsla(220, 20%, 15%);
+
+  --neutral-gradient: linear-gradient(
+    to bottom,
+    hsl(220, 20%, 20%),
+    hsla(220, 20%, 15%, 0)
+  );
 }
 
 [data-theme="light"] {
-  --color-primary: hsl(20, 85%, 54%);
-  --color-secondary: hsl(200, 85%, 44%);
+  --color-primary: hsl(210, 100%, 45%);
+  --color-secondary: hsl(210, 100%, 80%);
 
   --color-bg: hsl(0, 0%, 96%);
-  --color-text: hsl(198, 0%, 25%);
+  --color-text: hsl(180, 0%, 20%);
 
-  --color-neutral-100: hsl(0, 0%, 92%);
-  --color-neutral-200: hsl(0, 0%, 85%);
-  --color-neutral-300: hsl(0, 0%, 70%);
-  --color-neutral-400: hsl(0, 0%, 60%);
-  --color-neutral-500: hsl(0, 0%, 50%);
-  --color-neutral-600: hsl(0, 0%, 40%);
-  --color-neutral-700: hsl(0, 0%, 30%);
-  --color-neutral-800: hsl(0, 0%, 20%);
-  --color-neutral-900: hsl(0, 0%, 5%);
-  --color-neutral-1000: hsl(0, 0%, 0%);
+  --color-neutral-100: hsl(180, 20%, 92%);
+  --color-neutral-200: hsl(180, 20%, 85%);
+  --color-neutral-300: hsl(180, 20%, 70%);
+  --color-neutral-400: hsl(180, 20%, 60%);
+  --color-neutral-500: hsl(180, 20%, 50%);
+  --color-neutral-600: hsl(180, 20%, 40%);
+  --color-neutral-700: hsl(180, 20%, 30%);
+  --color-neutral-800: hsl(180, 20%, 20%);
+  --color-neutral-900: hsl(180, 20%, 15%);
+  --color-neutral-1000: hsl(180, 20%, 5%);
+
+  --neutral-gradient: linear-gradient(
+    to bottom,
+    hsl(180, 20%, 85%),
+    hsla(180, 20%, 70%, 0)
+  );
 }
 
 @media screen and (max-width: 500px) {
   :root {
-    --line-height: 1.45;
+    --line-height: 1.5;
   }
 }

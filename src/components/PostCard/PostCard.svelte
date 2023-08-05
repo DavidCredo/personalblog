@@ -19,7 +19,7 @@
   }
 
   p {
-    color: var(--color-text-light);
+    color: var(--color-neutral-900);
   }
 
   a {
@@ -32,13 +32,12 @@
   }
 
   .link-cta {
-    text-decoration: none;
     width: fit-content;
-    color: var(--color-primary);
     font-weight: var(--font-weight-bold);
   }
 
-  a:hover > h3 {
-    color: var(--color-primary)
+  a:hover > h3,
+  a:hover > .link-cta {
+    color: var(--color-primary);
   }
 </style>

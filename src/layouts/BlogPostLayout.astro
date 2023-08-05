@@ -6,56 +6,80 @@ import TableOfContents from "../components/TableOfContents/TableOfContents.svelt
 import Layout from "./Layout.astro";
 
 export interface Props {
-    title: string;
-    headings: MarkdownHeading[];
+  title: string;
+  headings: MarkdownHeading[];
+  description: string;
 }
 
-const { title, headings } = Astro.props;
+const { title, headings, description } = Astro.props;
 ---
 
 <Layout title={title}>
-    <div class="grid-container">
-        <TableOfContents headings={headings} />
-        <main>
-            <slot />
-        </main>
-    </div>
+  <section id="header">
+    <h1>{title}</h1>
+    <p>{description}</p>
+  </section>
+  <div class="grid-container">
+    <TableOfContents headings={headings} />
+    <main>
+      <slot />
+    </main>
+  </div>
 </Layout>
 
 <style is:global>
+  #header {
+    margin: 0 auto;
+    background-image: var(--neutral-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 33vh;
+    margin-block-end: 6rem;
+  }
+
+  #header > h1 {
+    padding-inline: 2rem;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template: "post toc" auto;
+    gap: 1.5rem;
+    margin: 0 auto;
+    max-width: 1300px;
+    place-content: center;
+    /* width: 100%; */
+    padding-inline: 2rem;
+  }
+  .toc {
+    grid-area: toc;
+    position: sticky;
+    top: 24px;
+    height: fit-content;
+  }
+
+  .content {
+    grid-area: post;
+  }
+
+  h2:not(:first-of-type) {
+    margin-block-start: 1rem;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+    max-width: 65ch;
+  }
+
+  @media screen and (max-width: 1100px) {
     .grid-container {
-        display: grid;
-        grid-template:
-            "toc " auto
-            "post" auto;
-        gap: 2rem;
-        margin: 0 auto;
-        max-width: 1100px;
-        place-content: center;
-        width: 100%;
-        padding-inline: 1rem;
+      grid-template: "post" auto;
+      padding-inline: 1.6rem;
     }
     .toc {
-        grid-area: toc;
-        height: fit-content;
+      display: none;
     }
-
-    .content {
-        grid-area: post;
-    }
-
-    h1 {
-        margin-block: 0.4rem;
-        text-align: center;
-        max-width: 40rem;
-    }
-
-    h2 {
-        margin-block-start: 1rem;
-    }
-
-    p {
-        margin-bottom: 0.8rem;
-        max-width: 40rem;
-    }
+  }
 </style>

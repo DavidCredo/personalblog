@@ -2,11 +2,6 @@
 Heavily inspired by Josh W. Comeau's CSS-Reset! 
 */
 
-@font-face {
-  font-family: "MonaSans";
-  src: url("/fonts/MonaSans.woff2");
-}
-
 p {
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height);
@@ -20,7 +15,7 @@ h1 {
 /* 	
 Basic color palette stuff 
 */
-html {  
+html {
   font-size: 1rem;
   font-size: clamp(1rem, calc(1rem + 0.2vw), 1.2rem);
 }
@@ -49,7 +44,6 @@ body {
   line-height: var(--line-height);
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
-  transition: background-color 0.5s ease;
 }
 /*
 5. Improve media defaults
@@ -85,26 +79,37 @@ h6 {
   color: var(--color-text);
 }
 
-h1, h2, h3, h4 {
-  line-height: 1.1;
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
 }
 
 h1 {
-  font-size: var(--font-size-xxxlarge);
-}
-
-h2 {
-  font-size: var(--font-size-xxlarge);
-}
-
-h3 {
   font-size: var(--font-size-xlarge);
 }
 
-h4 {
+h2 {
   font-size: var(--font-size-large);
+}
+
+h3 {
+  font-size: var(--font-size-medium);
+}
+
+h4 {
+  font-size: var(--font-size-regular);
+  font-weight: var(--font-weight-bold);
 }
 
 p {
   font-size: var(--font-size-regular);
+}
+
+a {
+  font-size: var(--font-size-regular);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  text-decoration: none;
 }

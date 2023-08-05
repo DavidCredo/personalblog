@@ -8,14 +8,13 @@
 
 <style>
   a {
-    text-decoration: none;
-    color: var(--color-text-light);
+    color: var(--color-neutral-800);
     font-size: var(--font-size-regular);
-    transition: color 0.2s ease, font-weight 0.2s ease;
+    font-weight: var(--font-weight-regular);
+    transition: color 0.2s ease;
   }
 
   a:hover {
     color: var(--color-primary);
-    font-weight: bold;
   }
 </style>

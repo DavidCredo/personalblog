@@ -17,16 +17,15 @@
 <style>
   h2 {
     font-size: var(--font-size-large);
-    margin-block-end: 0.4rem;
     border-bottom: var(--color-primary) 2px solid;
+    margin: 0 0 0.4rem ;
   }
   .flex-wrapper {
     display: flex;
     flex-direction: column;
     align-items: start;
   }
-
   nav {
-    padding: 1rem;
+    padding-inline: 1rem;
   }
 </style>
