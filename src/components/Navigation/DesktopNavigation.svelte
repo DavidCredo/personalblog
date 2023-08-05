@@ -34,7 +34,7 @@
     color: var(--color-text);
   }
 
-  @media (max-width: 600px) {
+  @media screen and (max-width: 600px) {
     nav {
       display: none;
     }

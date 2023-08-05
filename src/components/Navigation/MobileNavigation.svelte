@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { fade, slide } from "svelte/transition";
+  import { fade } from "svelte/transition";
   import MenuToggle from "../Toggles/MenuToggle.svelte";
   import ThemeToggle from "../Toggles/ThemeToggle.svelte";
   import Spacer from "../Util/Spacer.svelte";
@@ -45,7 +45,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     overflow: hidden;
@@ -68,10 +68,11 @@
 
   li {
     font-weight: var(--font-weight-bold);
-    font-size: var(--font-size-xlarge);
   }
   a {
-    padding: 1rem;
+    font-size: var(--font-size-xlarge);
+    padding: 0.5rem;
+    margin-block: 0.4rem;
     color: var(--color-text);
     text-decoration: none;
   }
