@@ -10,10 +10,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.19.7",
-    "@astrojs/svelte": "^3.1.0",
-    "astro": "^2.7.4",
+    "@astrojs/mdx": "^1.0.2",
+    "@astrojs/rss": "^3.0.0",
+    "@astrojs/svelte": "^4.0.1",
+    "@threlte/core": "^6.0.6",
+    "@threlte/extras": "^5.4.1",
+    "astro": "^3.0.0",
     "lucide-svelte": "^0.261.0",
-    "svelte": "^4.0.4"
+    "svelte": "^4.2.0",
+    "three": "^0.155.0"
   }
 }

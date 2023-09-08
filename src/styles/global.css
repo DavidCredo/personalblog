@@ -44,6 +44,11 @@ body {
   line-height: var(--line-height);
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
+  
+}
+
+body, html {
+  height: 100%;
 }
 /*
 5. Improve media defaults
@@ -112,4 +117,8 @@ a {
   font-weight: var(--font-weight-bold);
   color: var(--color-text);
   text-decoration: none;
+}
+
+code {
+  font-family: var(--font-family-code);
 }

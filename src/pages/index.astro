@@ -1,15 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import HomeScene from "../components/3D/Scenes/HomeScene.svelte";
 ---
 
 <Layout title="Welcome to my blog!">
-	<h1>Hello Blog!</h1>
-	<p>Example body copy text. This needs to look really good.</p>
+    <HomeScene client:load />
 </Layout>
 
 <style>
-	h1 {
-		color: var(--color-primary);
-		
-	}
+    h1 {
+        color: var(--color-primary);
+    }
 </style>
