@@ -5,7 +5,6 @@
 
 <nav aria-label="desktop navigation">
   <ul>
-    <li><a href="/about">About</a></li>
     <li><a href="/posts">Posts</a></li>
   </ul>
   <Spacer axis="horizontal" size="16" />

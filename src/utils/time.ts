@@ -1,3 +1,3 @@
 export function convertDateToPublishDate(date: Date): string {
-    return `${date.getDay()}.${date.getMonth()}.${date.getFullYear()}`
+    return `${date.getUTCDate()}.${date.getMonth() + 1}.${date.getFullYear()}`
 }

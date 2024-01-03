@@ -24,9 +24,6 @@
   <nav aria-label="mobile-navigation" transition:fade={{ duration: 200 }}>
     <ul>
       <li>
-        <a href="/about">About</a>
-      </li>
-      <li>
         <a href="/posts">Posts</a>
       </li>
     </ul>
@@ -46,6 +43,7 @@
     top: 0;
     bottom: 0;
     overflow: hidden;
+    height: 100%;
     width: 100%;
     z-index: 100;
   }

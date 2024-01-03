@@ -1,5 +1,5 @@
 /*
-Heavily inspired by Josh W. Comeau's CSS-Reset! 
+Credit goes to Josh W. Comeau! Check out his blog: https://www.joshwcomeau.com/
 */
 
 p {
@@ -44,10 +44,10 @@ body {
   line-height: var(--line-height);
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
-  
 }
 
-body, html {
+body,
+html {
   height: 100%;
 }
 /*
@@ -121,4 +121,16 @@ a {
 
 code {
   font-family: var(--font-family-code);
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
 }
