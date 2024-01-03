@@ -3,25 +3,36 @@ import { getCollection } from "astro:content";
 import BlogPostLayout from "../../layouts/BlogPostLayout.astro";
 
 export async function getStaticPaths() {
-    const blogEntries = await getCollection("blog");
+  const blogEntries = await getCollection("blog");
+  if (blogEntries === null) {
+    return {
+      notFound: true,
+    };
+  } else {
     return blogEntries.map((entry) => ({
-        params: { slug: entry.slug },
-        props: { entry },
+      params: { slug: entry.slug },
+      props: { entry },
     }));
+  }
 }
 
+export const prerender = true;
 const { entry } = Astro.props;
 const { Content, headings } = await entry.render();
 ---
 
-<BlogPostLayout title={entry.data.title} headings={headings}>
-    <section class="content">
-        <Content />
-    </section>
+<BlogPostLayout
+  title={entry.data.title}
+  headings={headings}
+  description={entry.data.description}
+>
+  <section class="content">
+    <Content />
+  </section>
 </BlogPostLayout>
 
 <style>
-    h1 {
-        color: -var(--color-primary);
-    }
+  h1 {
+    color: -var(--color-primary);
+  }
 </style>

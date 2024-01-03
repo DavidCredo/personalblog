@@ -1,14 +1,45 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HomeScene from "../components/3D/Scenes/HomeScene.svelte";
+import PostCard from "../components/PostCard/PostCard.svelte";
+import { getCollection } from "astro:content";
+
+const blogPosts = await getCollection("blog");
 ---
 
 <Layout title="Welcome to my blog!">
-    <HomeScene client:load />
+  <header>
+    <h1>Hi, I'm David.</h1>
+    <p>
+      I write about programming, books I've read and what ever else fascinates
+      me. Enjoy!
+    </p>
+  </header>
+  <main>
+    <HomeScene client:only="svelte" />
+  </main>
 </Layout>
 
 <style>
-    h1 {
-        color: var(--color-primary);
-    }
+  header {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: var(--font-size-xlarge);
+    text-align: center;
+    justify-content: center;
+    margin-block: var(--font-size-xlarge);
+  }
+
+  header > h1 {
+    font-size: 4rem;
+  }
+
+  header > p {
+    font-size: var(--font-size-medium);
+  }
+  main {
+    display: grid;
+
+  }
 </style>

@@ -1,6 +1,6 @@
 <script lang="ts">
   export let size: number;
-  export let axis = undefined;
+  export let axis: string | undefined = undefined;
 
   const width = axis === "vertical" ? 1 : size;
   const height = axis === "horizontal" ? 1 : size;

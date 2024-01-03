@@ -17,7 +17,7 @@ const { title, headings, description } = Astro.props;
 <Layout title={title}>
   <section id="header">
     <h1>{title}</h1>
-    <p>{description}</p>
+    <p id="post-description">{description}</p>
   </section>
   <div class="grid-container">
     <TableOfContents headings={headings} />
@@ -30,17 +30,24 @@ const { title, headings, description } = Astro.props;
 <style is:global>
   #header {
     margin: 0 auto;
-    background-image: var(--neutral-gradient);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 33vh;
-    margin-block-end: 6rem;
+    height: 30vh;
   }
 
   #header > h1 {
-    padding-inline: 2rem;
+    font-size: var(--font-size-xlarge);
+    padding-inline: var(--font-size-xlarge);
+  }
+
+  #post-description {
+    color: var(--color-primary);
+    font-size: var(--font-size-medium);
+    padding-inline: var(--font-size-regular);
+    font-weight: var(--font-weight-bold);
   }
 
   .grid-container {
@@ -68,7 +75,7 @@ const { title, headings, description } = Astro.props;
     margin-block-start: 1rem;
   }
 
-  p {
+  main p {
     margin-bottom: 1.5rem;
     max-width: 65ch;
   }

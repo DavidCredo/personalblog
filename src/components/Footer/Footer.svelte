@@ -2,7 +2,6 @@
   import { Rss } from "lucide-svelte";
   import IconButton from "../Button/IconButton.svelte";
   import FooterItem from "./FooterItem.svelte";
-  import Spacer from "../Util/Spacer.svelte";
 
   const getCopyrightYear = (): string => {
     const establishedYear = new Date("2023-01-01").getFullYear();
@@ -27,7 +26,8 @@
     <div class="footer-section">
       <p><strong>Legal</strong></p>
       <ul>
-        <FooterItem label="Privacy Policy" url="/privacy-policy" />
+        <FooterItem label="Legal Notice" url="legal" />
+        <FooterItem label="Privacy Policy" url="privacy" />
       </ul>
     </div>
     <IconButton description="RSS feed of this blog"
@@ -55,6 +55,7 @@
 
   .footer-section {
     margin: var(--font-size-regular);
+    align-self: flex-start;
   }
 
   ul {

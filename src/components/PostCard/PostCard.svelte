@@ -1,12 +1,18 @@
 <script lang="ts">
+  import { convertDateToPublishDate } from "../../utils/time";
+
   export let title: string;
   export let description: string;
+  export let pubDate: Date;
   export let slug: string;
 </script>
 
 <article>
   <a class="card-link" href={"/blog/" + slug}>
     <h3>{title}</h3>
+    <p class="publish-info">
+      Published on: {convertDateToPublishDate(pubDate)}
+    </p>
     <p>{description}</p>
     <div class="link-cta">Read more</div>
   </a>
@@ -20,6 +26,11 @@
 
   p {
     color: var(--color-neutral-900);
+  }
+
+  .publish-info {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-light);
   }
 
   a {
