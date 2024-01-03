@@ -47,7 +47,7 @@ const { title } = Astro.props;
     <div class="wrapper">
       <header>
         <div class="header-wrapper">
-          <a href="/">David Credo</a>
+          <a id="logo" href="/">David Credo</a>
           <DesktopNavigation client:only="svelte" />
           <MobileNavigation client:only="svelte" />
         </div>
@@ -60,6 +60,10 @@ const { title } = Astro.props;
 <style>
   header {
     background: var(--color-neutral-100);
+  }
+
+  #logo {
+    padding-inline: 1rem;
   }
 
   .wrapper {
