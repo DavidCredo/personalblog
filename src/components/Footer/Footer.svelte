@@ -26,8 +26,8 @@
     <div class="footer-section">
       <p><strong>Legal</strong></p>
       <ul>
-        <FooterItem label="Impressum" url="legal" />
-        <FooterItem label="Datenschutzerklärung" url="privacy" />
+        <FooterItem label="Impressum" url="/legal" />
+        <FooterItem label="Datenschutzerklärung" url="/privacy" />
       </ul>
     </div>
     <IconButton description="RSS feed of this blog"
@@ -50,7 +50,7 @@
     justify-content: center;
     background-color: var(--color-neutral-100);
     padding-block: var(--font-size-medium);
-    width: 100vw;
+    width: 100%;
   }
 
   .footer-section {
