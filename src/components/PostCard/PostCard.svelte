@@ -13,15 +13,25 @@
     <p class="publish-info">
       Published on: {convertDateToPublishDate(pubDate)}
     </p>
-    <p>{description}</p>
+    <p class="description">{description}</p>
     <div class="link-cta">Read more</div>
   </a>
 </article>
 
 <style>
   article {
-    max-width: 700px;
+    width: 600px;
     transition: background-color 0.4s ease;
+    border-radius: 0.5rem;
+    background-color: var(--color-neutral-100);
+
+    @media (max-width: 600px) {
+      width: 100%; /* Full width on small screens */
+    }
+  }
+
+  h3 {
+    padding-block-end: 0.4rem;
   }
 
   p {
@@ -39,7 +49,11 @@
     justify-content: space-around;
     height: 100%;
     text-decoration: none;
-    padding: 1rem;
+    padding: var(--font-size-medium);
+  }
+
+  .description {
+    padding-block: var(--font-size-small);
   }
 
   .link-cta {
