@@ -5,13 +5,15 @@ import { rehypeAccessibleEmojis } from "rehype-accessible-emojis";
 import { h, s } from "hastscript";
 import svelte from "@astrojs/svelte";
 import mdx from "@astrojs/mdx";
-
 import node from "@astrojs/node";
+import expressiveCode from "astro-expressive-code";
+import { remarkReadingTime } from "./src/utils/readingTime";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [svelte(), mdx()],
+  integrations: [svelte(), expressiveCode({ themes: ["dracula"] }), mdx()],
   markdown: {
+    remarkPlugins: [remarkReadingTime],
     rehypePlugins: [
       rehypeHeadingIds,
       rehypeAccessibleEmojis,
@@ -21,7 +23,7 @@ export default defineConfig({
           behavior: "append",
           properties: {
             class: "autolink-header",
-            ariaHidden: true,
+            ariaHidden: false,
             tabIndex: -1,
           },
           content: [

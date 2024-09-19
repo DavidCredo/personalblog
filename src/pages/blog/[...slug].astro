@@ -18,13 +18,14 @@ export async function getStaticPaths() {
 
 export const prerender = true;
 const { entry } = Astro.props;
-const { Content, headings } = await entry.render();
+const { Content, headings, remarkPluginFrontmatter } = await entry.render();
 ---
 
 <BlogPostLayout
   title={entry.data.title}
   headings={headings}
   description={entry.data.description}
+  readingTime={remarkPluginFrontmatter.minutesRead}
 >
   <section class="content">
     <Content />

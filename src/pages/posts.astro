@@ -12,7 +12,6 @@ const blogPosts = await getCollection("blog");
     <section>
       {
         blogPosts &&
-        
           blogPosts.map((post) => (
             <PostCard
               description={post.data.description}

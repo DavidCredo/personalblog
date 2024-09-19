@@ -1,10 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HomeScene from "../components/3D/Scenes/HomeScene.svelte";
-import PostCard from "../components/PostCard/PostCard.svelte";
 import { getCollection } from "astro:content";
+import PostCard from "../components/PostCard/PostCard.svelte";
 
 const blogPosts = await getCollection("blog");
+
+const latestPost = blogPosts.sort((a, b) => {
+  return (
+    new Date(b.data.publishDate).getTime() -
+    new Date(a.data.publishDate).getTime()
+  );
+})[0];
 ---
 
 <Layout title="Welcome to my blog!">
@@ -16,7 +23,18 @@ const blogPosts = await getCollection("blog");
     </p>
   </header>
   <main>
-    <HomeScene client:only="svelte" />
+    <div class="canvas-wrapper">
+      <HomeScene client:only="svelte" />
+    </div>
+    <section id="latest-posts">
+      <h2>Latest post</h2>
+      <PostCard
+        description={latestPost.data.description}
+        pubDate={latestPost.data.publishDate}
+        title={latestPost.data.title}
+        slug={latestPost.slug}
+      />
+    </section>
   </main>
 </Layout>
 
@@ -28,18 +46,40 @@ const blogPosts = await getCollection("blog");
     padding: var(--font-size-xlarge);
     text-align: center;
     justify-content: center;
-    margin-block: var(--font-size-xlarge);
+    margin-top: 6rem;
   }
 
   header > h1 {
     font-size: 4rem;
+    margin-block-end: var(--font-size-medium);
   }
 
   header > p {
     font-size: var(--font-size-medium);
   }
   main {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+  }
 
+  .canvas-wrapper {
+    flex: 1 1 100%;
+    min-width: calc(100vw - 2rem);
+  }
+
+  #latest-posts {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0.5rem;
+    gap: 1rem;
+    place-items: center;
+    margin: auto;
+    margin-block-end: 3rem;
+  }
+
+  #latest-posts h2 {
+    text-align: center; 
   }
 </style>

@@ -18,7 +18,7 @@
   h2 {
     font-size: var(--font-size-large);
     border-bottom: var(--color-primary) 2px solid;
-    margin: 0 0 0.4rem ;
+    margin: 0 0 0.4rem;
   }
   .flex-wrapper {
     display: flex;
