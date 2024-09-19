@@ -5,16 +5,16 @@
   --color-bg: hsl(0, 0%, 96%);
   --color-text: hsl(180, 0%, 20%);
 
-  --color-neutral-100: hsl(180, 20%, 92%);
-  --color-neutral-200: hsl(180, 20%, 85%);
-  --color-neutral-300: hsl(180, 20%, 70%);
-  --color-neutral-400: hsl(180, 20%, 60%);
-  --color-neutral-500: hsl(180, 20%, 50%);
-  --color-neutral-600: hsl(180, 20%, 40%);
-  --color-neutral-700: hsl(180, 20%, 30%);
-  --color-neutral-800: hsl(180, 20%, 20%);
-  --color-neutral-900: hsl(180, 20%, 15%);
-  --color-neutral-1000: hsl(180, 20%, 5%);
+  --color-neutral-100: hsl(220, 20%, 92%);
+  --color-neutral-200: hsl(220, 20%, 85%);
+  --color-neutral-300: hsl(220, 20%, 70%);
+  --color-neutral-400: hsl(220, 20%, 60%);
+  --color-neutral-500: hsl(220, 20%, 50%);
+  --color-neutral-600: hsl(220, 20%, 40%);
+  --color-neutral-700: hsl(220, 20%, 30%);
+  --color-neutral-800: hsl(220, 20%, 20%);
+  --color-neutral-900: hsl(220, 20%, 15%);
+  --color-neutral-1000: hsl(220, 20%, 5%);
 
   --font-family: system-ui, sans-serif;
   --font-family-code: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
