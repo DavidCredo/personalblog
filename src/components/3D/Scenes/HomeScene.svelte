@@ -12,6 +12,6 @@
 <style>
   .canvas-container {
     display: block;
-    height: 40vh;
+    height: 30vh;
   }
 </style>
