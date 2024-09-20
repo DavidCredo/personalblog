@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+
+export interface Props {
+  src: string;
+  alt: string;
+  subtitle: string;
+  isPortrait?: boolean;
+}
+
+const { src, alt, subtitle, isPortrait = false } = Astro.props;
+---
+
+<div class=`content-image ${isPortrait ? "portrait-container" : ""}` }>
+  <Image src={src} alt={alt} class=`image ${isPortrait ? "portrait" : ""}` />
+  <p>{subtitle}</p>
+</div>
+
+<style>
+  .content-image {
+    border-radius: 1rem;
+    margin-block: 2rem;
+    width: 65ch;
+    background-color: var(--color-neutral-100);
+    border: 1px solid var(--color-neutral-300);
+
+    @media screen and (max-width: 1100px) {
+      width: 100%;
+    }
+  }
+
+  .portrait-container {
+    margin-inline: auto;
+  }
+
+  .image {
+    border-radius: 1rem 1rem 0 0;
+    width: 100%;
+    object-fit: cover;
+    height: auto;
+    border-bottom: 1px solid var(--color-neutral-300);
+  }
+
+  p {
+    padding: 1rem;
+    margin: 0;
+    font-size: var(--font-size-small);
+    color: var(--color-neutral-600);
+  }
+
+  .portrait {
+
+    height: 600px;
+    object-fit: contain;
+  }
+
+  p::before {
+    content: "📸 : ";
+  }
+</style>
