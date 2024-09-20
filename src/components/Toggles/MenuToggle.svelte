@@ -7,5 +7,4 @@
   }
 </script>
 
-<Hamburger type="elastic" bind:isOpen --color="var(--color-text)" --hover-opacity="1" />
-
+<Hamburger type="elastic" --color="var(--color-text)" --hover-opacity="1" />

@@ -1,5 +1,4 @@
 ---
-
 title: "How to add grounding shadows to your custom 3D models in RealityKit"
 description: "A little trick to enhance the realism of imported 3D models in a visionOS app"
 tags: ["Swift", "RealityKit", "3D", "AR", "visionOS", "Spatial Computing", "Reality Composer Pro", "Apple", "ECS"]
@@ -11,6 +10,7 @@ import { Code } from 'astro-expressive-code/components'
 import ContentImage from '../../components/BlogContent/ContentImage.astro'
 import noShadow from '../../Images/noShadow.png'
 import shadow from '../../Images/shadow.png'
+import Aside from '../../components/BlogContent/Aside.svelte'
 import rcomposerConfig from '../../Images/rcomposoerpro_groundshadow.png'
 export const code = `
 import RealityKit 
@@ -58,30 +58,44 @@ func enumerate(_ body: (Entity, UnsafeMutablePointer<Bool>) -> Void) {
 I've been working on a RealityKit project recently and I stumbled upon a little problem: I wanted to add grounding shadows to my custom 3D models, which was straightforward for built-in primitives such as boxes or spheres, but not so much for custom models. In this article, I'll show you how to add grounding shadows to your custom 3D models in RealityKit.
 
 When you add a custom 3D model to your RealityKit scene, it will not cast shadows on the ground or other objects by default. 
-Shadows contribute a lot to the sense of presence (the degree to which the user feels like virtual objects are part of the real world) and realism of an AR experience, so it's important to get them right.
+Shadows contribute a lot to the sense of presence (the degree to which the user feels like virtual objects are part of the real world) and realism of the experience, so it's important to get them right.
+
+Below you can see the same model i use on this blog, imported into a visionOS app. The model looks great, but it doesn't cast any shadows.
 
 <ContentImage src={noShadow} alt="The 3D-model without a shadow beneath." subtitle="My trusty ol' terminal model, but it doesn't cast any shadows! 🙁" />
 
 ## The solution
 
-Apple uses a technique called "grounding shadows" to cast shadows from 3D models onto the physical environment or other objects in the scene. 
-While the actual solution is pretty simple, it's rather hidden in Apple's documentation. 
-In order for a 3D model to cast shadows, it's Entity must have a `GroundingShadowComponent`. Built-in primitives like boxes or spheres have this component by default, because they are `ModelEntities`, but this is not necessarily the case for custom models.
+Luckily, Apple provides an API called "Grounding Shadows" to cast shadows from 3D models onto the physical environment or other objects in the scene. The effect can be seen throughout visionOS and i really wanted to achieve the same effect in my project. 
+While the actual solution is pretty simple, it's rather hidden in the documentation. 
+In order for a 3D model to cast shadows, at least one entity in it's hierarchy must have a `GroundingShadowComponent`. Built-in primitives like boxes or spheres have this component by default, because they are `ModelEntities` which satisfy this requirement.
+Imported models don't have this component by default, so you have to add it yourself.
 
-The result looks like this:
+The result looks something like this:
 
 <ContentImage src={shadow} alt="A 3D-model with a shadow beneath." subtitle="Now that's what i'm talking about! 🌚" />
 
+<Aside> 
+    <h3>How to decide which parts of your model should cast shadows</h3>
+    <p> 
+        Ask yourself if the part would cast a shadow in real life. If the answer is yes, add the component to that part. <br/>
+        It also depends a lot on the hierarchy of your model. If possible, each part of the model should have a descriptive name so that you can easily identify them after importing to your project.
+        <br/>I learn't this the hard way, after importing a model with quite a few parts and no descriptive names (I know, I know... 😅).
+        If you don't have control over the model, you'll have to figure out which parts should cast shadows by trial and error.
+    </p>
+</Aside>
 
-Now let's dive in and see how i achieved this.
+Now, let's dive in and see how i achieved this. <br/>
 There are two ways to add a `GroundingShadowComponent` to your custom model:
 
 ### Option 1: Add the component manually in Reality Composer Pro
 
 If you're using Reality Composer Pro to create your custom models, you can add a `GroundingShadowComponent` to your model by selecting the model in the scene hierarchy and clicking on the `Add Component` button in the inspector.
-It's not sufficient to add the component to the root enity, you have to add it to each `ModelEntity` that you want to cast shadows.
+It's not sufficient to add the component to the root enity, you have to add it to each `ModelEntity` that you want to cast shadows. 
 
-<ContentImage src={rcomposerConfig} alt="The desired configuration of the GroundingShadow Component in the Reality Composer Pro application" subtitle="Add the GroundingShadowComponent to the ModelEntity in Reality Composer Pro, make sure the Casts Shadow option is ticked!" isPortrait={true} />
+
+
+<ContentImage src={rcomposerConfig} alt="The desired configuration of the GroundingShadow Component in the Reality Composer Pro application" subtitle="Add the GroundingShadowComponent to the ModelEntity in Reality Composer Pro, make sure the Casts Shadow option is ticked!"  isPortrait/>
 
 ### Option 2: Add the component programmatically
 
@@ -90,6 +104,13 @@ I found a very handy extension on the RealityKit `Entity` class that allows you 
 The original code is from [this answer](https://forums.developer.apple.com/forums/thread/733918) on the Apple Developer Forums. Shout out to user `drewolbrich` for providing this!
 
 <Code code={code} lang="swift" wrap title="EntityExtensions.swift" theme="aurora-x"/>
+
+<Aside color="tip">
+    <h3>Implementation details</h3>
+    <p>
+    The following part is purely for educational purposes. <br/> If you're not interested in that sort of thing, feel free to skip it! 😊
+    </p>
+</Aside>
 
 Here's my understanding of the code:
 

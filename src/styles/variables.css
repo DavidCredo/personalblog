@@ -5,6 +5,18 @@
   --color-bg: hsl(0, 0%, 96%);
   --color-text: hsl(180, 0%, 20%);
 
+  --color-aside-tip-bg: hsl(104, 100%, 95%);
+  --color-aside-tip-border: hsl(104, 100%, 70%);
+  --color-aside-tip-text: hsl(104, 100%, 20%);
+
+  --color-aside-warning-bg: hsl(40, 100%, 95%);
+  --color-aside-warning-border: hsl(40, 100%, 70%);
+  --color-aside-warning-text: hsl(40, 100%, 20%);
+
+  --color-aside-error-bg: hsl(0, 100%, 95%);
+  --color-aside-error-border: hsl(0, 100%, 70%);
+  --color-aside-error-text: hsl(0, 100%, 20%);
+
   --color-neutral-100: hsl(220, 20%, 92%);
   --color-neutral-200: hsl(220, 20%, 85%);
   --color-neutral-300: hsl(220, 20%, 70%);
@@ -37,6 +49,18 @@
 
   --color-bg: hsl(230, 25%, 10%);
   --color-text: hsl(315, 0%, 93%);
+
+  --color-aside-tip-bg: hsl(104, 100%, 15%);
+  --color-aside-tip-border: hsl(104, 100%, 30%);
+  --color-aside-tip-text: hsl(104, 100%, 95%);
+
+  --color-aside-warning-bg: hsl(40, 100%, 15%);
+  --color-aside-warning-border: hsl(40, 100%, 30%);
+  --color-aside-warning-text: hsl(40, 100%, 95%);
+
+  --color-aside-error-bg: hsl(0, 100%, 15%);
+  --color-aside-error-border: hsl(0, 100%, 30%);
+  --color-aside-error-text: hsl(0, 100%, 95%);
 
   --color-neutral-1000: hsl(220, 20%, 100%);
   --color-neutral-900: hsl(220, 20%, 95%);
