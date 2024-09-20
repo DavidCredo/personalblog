@@ -1,0 +1,32 @@
+---
+
+---
+
+<script is:inline>
+  // Matomo tracking code
+  var _paq = (window._paq = window._paq || []);
+
+  // Cookie consent integration
+  document.addEventListener("cookieconsent_status_change", function (e) {
+    if (e.detail === "allow") {
+      _paq.push(["setCookieConsentGiven"]);
+    } else {
+      _paq.push(["forgetCookieConsentGiven"]);
+    }
+  });
+
+  _paq.push(["requireConsent"]);
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
+  (function () {
+    var u = "https://matomo.credo.codes/";
+    _paq.push(["setTrackerUrl", u + "matomo.php"]);
+    _paq.push(["setSiteId", "1"]);
+    var d = document,
+      g = d.createElement("script"),
+      s = d.getElementsByTagName("script")[0];
+    g.async = true;
+    g.src = u + "matomo.js";
+    s.parentNode.insertBefore(g, s);
+  })();
+</script>

@@ -6,6 +6,11 @@
 
   function handleThemeChange(e) {
     const newTheme = e.matches ? "dark" : "light";
+    if (newTheme == "dark") {
+      document.documentElement.classList.add('cc--darkmode');
+    } else {
+      document.documentElement.classList.remove('cc--darkmode');
+    }
     setColorScheme(newTheme);
   }
   onMount(() => {
@@ -28,6 +33,11 @@
   title="Toggles theme between light and dark mode"
   on:click={() => {
     const newColorScheme = $colorSchemeStore == "light" ? "dark" : "light";
+    if (newColorScheme == "dark") {
+      document.documentElement.classList.add('cc--darkmode');
+    } else {
+      document.documentElement.classList.remove('cc--darkmode');
+    }
     setColorScheme(newColorScheme);
   }}
 >

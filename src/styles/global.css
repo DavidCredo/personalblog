@@ -134,3 +134,28 @@ code {
   width: 1px;
   white-space: nowrap;
 }
+
+#cc-main {
+  --cc-bg: var(--color-bg);
+  --cc-btn-primary-bg: var(--color-primary);
+  --cc-btn-primary-border-color: var(--color-primary);
+  --cc-btn-primary-hover-bg: var(--color-neutral-900);
+  --cc-btn-primary-hover-border-color: var(--color-neutral-800);
+  --cc-btn-primary-color: var(--color-neutral-100);
+
+  --cc-btn-secondary-bg: var(--color-neutral-100);
+  --cc-btn-secondary-border-color: var(--color-neutral-100);
+  --cc-btn-secondary-hover-bg: var(--color-neutral-200);
+  --cc-btn-secondary-hover-border-color: var(--color-neutral-200);
+  --cc-btn-secondary-color: var(--color-text);
+
+  --cc-toggle-on-bg: var(--color-primary);
+  --cc-cookie-category-block-bg: var(--color-neutral-100);
+  --cc-cookie-category-block-border: var(--color-neutral-100);
+  --cc-cookie-category-block-hover-bg: var(--color-neutral-200);
+  --cc-cookie-category-expanded-block-bg: var(--color-neutral-100);
+  --cc-cookie-category-expanded-block-hover-bg: var(--color-neutral-200);
+  --cc-webkit-scrollbar-bg: var(--color-neutral-100);
+  --cc-footer-bg: var(--color-neutral-100);
+
+}
