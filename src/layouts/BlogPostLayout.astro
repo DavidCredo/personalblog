@@ -39,11 +39,11 @@ const { title, headings, description, readingTime } = Astro.props;
   });
 </script>
 
-<Layout title={title}>
+<Layout title={title} description={description}>
   <section id="header">
     <h1>{title}</h1>
     <p id="post-description">{description}</p>
-    <strong class="reading-time">{readingTime}</strong> 
+    <strong class="reading-time">{readingTime}</strong>
   </section>
   <div class="grid-container">
     <TableOfContents headings={headings} />
@@ -65,7 +65,6 @@ const { title, headings, description, readingTime } = Astro.props;
 
     @media screen and (max-width: 980px) {
       padding-inline: var(--font-size-regular);
-      
     }
   }
 
@@ -149,7 +148,7 @@ const { title, headings, description, readingTime } = Astro.props;
   main p {
     margin-bottom: 1rem;
     max-width: 65ch;
-  
+
     @media screen and (max-width: 1100px) {
       max-width: 100%;
     }

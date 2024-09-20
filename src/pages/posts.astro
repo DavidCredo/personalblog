@@ -4,15 +4,22 @@ import PostCard from "../components/PostCard/PostCard.svelte";
 import { getCollection } from "astro:content";
 
 const blogPosts = await getCollection("blog");
+
+const sortedPosts = blogPosts.sort((a, b) => {
+  return (
+    new Date(b.data.publishDate).getDate() -
+    new Date(a.data.publishDate).getDate()
+  );
+});
 ---
 
-<Layout title="Blog posts">
+<Layout title="Blog posts" description="All blog posts">
   <main>
     <h1>All posts</h1>
     <section>
       {
         blogPosts &&
-          blogPosts.map((post) => (
+          sortedPosts.map((post) => (
             <PostCard
               description={post.data.description}
               pubDate={post.data.publishDate}
